@@ -22,21 +22,21 @@
                             <form class="card-body">
                               <div class="form-control">
                                 <label class="label">
-                                  <span class="label-text">Phone Number</span>
+                                  <span id="" class="label-text">Phone Number</span>
                                 </label>
-                                <input type="email" placeholder="email" class="input input-bordered" required />
+                                <input id="phone-number" type="text" placeholder="Enter Your Phone Number" class="input input-bordered" required />
                               </div>
                               <div class="form-control">
                                 <label class="label">
                                   <span class="label-text">PIN</span>
                                 </label>
-                                <input type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
+                                <input id="pin-number" type="password" placeholder="Enter Your PIN" class="input input-bordered" autocomplete="off" required />
                                 <label class="label">
                                   <a href="#" class="label-text-alt link link-hover">Forgot PIN?</a>
                                 </label>
                               </div>
                               <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
+                                <button id="login-btn" class="btn btn-primary">Login</button>
                               </div>
                             </form>
                           </div>
@@ -47,5 +47,7 @@
               </div>
         </section>
     </main>
+
+    <script src="login.js"></script>
 </body>
 </html>
