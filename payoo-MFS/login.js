@@ -8,11 +8,11 @@ document.getElementById('login-btn').addEventListener('click', function(event) {
     console.log(phonenumber, pinnumber);
 
     if(phonenumber==='5' && pinnumber==='1234'){
-        console.log('Thank you sir');
+        console.log('Thank you');
         window.location.href='home.html'; //for move another page
     }
     else{
-        console.log('You are wrong.......')
+        alert('You are wrong.......')
     }
     
 })
