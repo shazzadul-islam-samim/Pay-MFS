@@ -16,10 +16,10 @@
 <body>
     <main>
         <div class="flex justify-center items-center min-h-screen">
-            <div class="mockup-phone bg-scroll">
+            <div class="mockup-phone bg-scroll" >
                 <div class="camera"></div>
-                <div class="display scrollable-display">
-                  <div class="artboard artboard-demo phone-1 items-start justify-start h-full">
+                <div class="display">
+                  <div class="artboard artboard-demo phone-1 items-start justify-start" style="overflow-y:scroll; scrollbar-width: none;">
                     <!-- navbar -->
                     <div class="navbar navbar-top  mt-7">
                         <div class="flex-1">
@@ -41,13 +41,13 @@
                     </div>
                     <div class="divider mt-0"></div>
                     <!-- some information -->
-                     <div class="m-3">
+                    <div class="m-3">
                         <h2 class="font-sans text-xl font-bold"><i class="fa-solid fa-fire mr-2 text-red-700"></i>Welcome to Green Bank!</h2>
                         <p class="text-sm">Enjoy easy and convenient financial services with us. Cashout charge is low....</p>
-                     </div>
+                    </div>
 
                      <!-- services -->
-                      <div class="grid grid-cols-3 gap-3 m-3">
+                    <div class="grid grid-cols-3 gap-3 m-3">
                         <button id="btn-addmoney" class="btn btn-lg">
                             <div class="felx flex-col justify-center items-center">
                                 <i class="fa-solid fa-money-check-dollar text-green-300"></i>
@@ -59,28 +59,115 @@
                                 <i class="fa-solid fa-hand-holding-hand text-yellow-600"></i>
                                 <p class="text-xs w-20">Cash Out</p>
                             </div>
-                        </button><button class="btn btn-lg">
+                        </button>
+                        <button id="btn-transfer" class="btn btn-lg">
                             <div class="felx flex-col justify-center items-center">
                                 <i class="fa-solid fa-money-bill-transfer text-orange-400"></i>
                                 <p class="text-xs w-20">Transfer Money</p>
                             </div>
-                        </button><button class="btn btn-lg">
+                        </button>
+                        <button class="btn btn-lg">
                             <div class="felx flex-col justify-center items-center">
                                 <i class="fa-brands fa-get-pocket text-green-700"></i>
                                 <p class="text-xs w-20">Get Bonus</p>
                             </div>
-                        </button><button class="btn btn-lg">
+                        </button>
+                        <button class="btn btn-lg">
                             <div class="felx flex-col justify-center items-center">
                                 <i class="fa-brands fa-amazon-pay text-indigo-400"></i>
                                 <p class="text-xs w-20">Pay Bill</p>
                             </div>
-                        </button><button class="btn btn-lg">
+                        </button>
+                        <button class="btn btn-lg">
                             <div class="felx flex-col justify-center items-center">
                                 <i class="fa-solid fa-money-check text-blue-500"></i>
                                 <p class="text-xs w-20">e-Bank</p>
                             </div>
                         </button>
                         
+                    </div>
+                      <!-- services end -->
+                       <div class="divider"></div>
+                       <!-- Add money section.............................................................. -->
+                       <div id="addmoney-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
+                        <form class="card-body">
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Bank A/C Number</span>
+                            </label>
+                            <input type="text" placeholder="Account Number" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Add Money</span>
+                            </label>
+                            <input id="addmoney-amount" type="text" placeholder="Add Money Amount" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">PIN</span>
+                            </label>
+                            <input id="addmoney-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
+                            <label class="label">
+                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                          </div>
+                          <div class="form-control mt-6">
+                            <button id="btn-update-addmoney" class="btn btn-primary">Add Money</button>
+                          </div>
+                        </form>
+                      </div>
+                       <!-- cash out section.............................................................. -->
+                       <div id="cashout-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
+                        <form class="card-body">
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Cash Out</span>
+                            </label>
+                            <input id="cashout-amount" type="text" placeholder="Cash Out Amount" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">PIN</span>
+                            </label>
+                            <input id="cashout-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
+                            <label class="label">
+                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                          </div>
+                          <div class="form-control mt-6">
+                            <button id="btn-update-cashout" class="btn btn-primary">Cash Out</button>
+                          </div>
+                        </form>
+                      </div>
+                       <!-- transfer money section.............................................................. -->
+                       <div id="transfer-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
+                        <form class="card-body">
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Transfer Money</span>
+                            </label>
+                            <input type="text" placeholder="Account Number" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Amount</span>
+                            </label>
+                            <input id="transfer-amount" type="text" placeholder="Enter Amount" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">PIN</span>
+                            </label>
+                            <input id="transfer-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
+                            <label class="label">
+                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                          </div>
+                          <div class="form-control mt-6">
+                            <button id="btn-update-cashout" class="btn btn-primary">Transfer</button>
+                          </div>
+                        </form>
                       </div>
                   </div>
                 </div>
@@ -91,6 +178,7 @@
         
     </main>
     <!-- script -->
+     <script src="deal.js"></script>
     
     
 </body>
