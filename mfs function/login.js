@@ -11,7 +11,7 @@ login.addEventListener('click', function (event){
     // console.log(inputnumber, inputpinNumber);
     if(pinNumber===1234){
         console.log('correct pin');
-        window.location.href='second.html';
+        window.location.href='services.html';
 
     }
     else{
