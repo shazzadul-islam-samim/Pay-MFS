@@ -24,7 +24,7 @@ document.getElementById('btn-update-addmoney').addEventListener('click', functio
         // //console.log(p);
         //document.getElementById('history-container').appendChild(p);
 
-        //way number two
+        //way number two. history section
         const div=document.createElement('div');
         div.classList.add('bg-green-500', 'text-center', 'w-50', 'rounded-lg','p-5','my-5');
         div.innerHTML=`

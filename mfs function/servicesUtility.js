@@ -20,6 +20,7 @@ function showSectionbyId(id){
     document.getElementById('cashout-set').classList.add('hidden');
     document.getElementById('transfer-set').classList.add('hidden');
     document.getElementById('transaction-history').classList.add('hidden');
+    document.getElementById('transfer-set').classList.add('hidden');
     
     document.getElementById(id).classList.remove('hidden');
     
