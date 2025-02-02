@@ -1,186 +1,291 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MFS with function</title>
     <!-- daisy ui and tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/a30f31170f.js" crossorigin="anonymous"></script>
-    <style>
-       
-    </style>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/a30f31170f.js"
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <body>
     <main>
-        <div class="flex justify-center items-center min-h-screen">
-            <div class="mockup-phone bg-scroll" >
-                <div class="camera"></div>
-                <div class="display">
-                  <div class="artboard artboard-demo phone-1 items-start justify-start" style="overflow-y:scroll; scrollbar-width: none;">
-                    <!-- navbar -->
-                    <div class="navbar navbar-top  mt-7">
-                        <div class="flex-1">
-                            <a class="btn btn-ghost text-3xl">
-                                <i class="fa-solid fa-building-columns"></i>
-                            </a>
-                            <div>
-                                <h2 id="account-balance" class="text-xl font-bold">45000</h2>
+      <div class="flex justify-center items-center min-h-screen">
+        <div class="mockup-phone bg-scroll">
+          <div class="camera"></div>
+          <div class="display">
+            <div
+              class="artboard artboard-demo phone-1 items-start justify-start"
+              style="overflow-y: scroll; scrollbar-width: none"
+            >
+              <!-- navbar -->
+              <div class="navbar navbar-top mt-7">
+                <div class="flex-1">
+                  <a class="btn btn-ghost text-3xl">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </a>
+                  <div>
+                    <h2 id="account-balance" class="text-xl font-bold">
+                      45000
+                    </h2>
 
-                                <p  class="font-light text-sm">Available Balance</p>
-                            </div>
-                        </div>
-                        <div class="flex-none">
-                            <button class="btn btn-square btn-ghost">
-                                <!-- Add content here if needed -->
-                                <button class="btn text-xs"><i class="fa-solid fa-arrow-right-from-bracket "></i>Log Out</button>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="divider mt-0"></div>
-                    <!-- some information -->
-                    <div class="m-3">
-                        <h2 class="font-sans text-xl font-bold"><i class="fa-solid fa-fire mr-2 text-red-700"></i>Welcome to Green Bank!</h2>
-                        <p class="text-sm">Enjoy easy and convenient financial services with us. Cashout charge is low....</p>
-                    </div>
-
-                     <!-- services -->
-                    <div class="grid grid-cols-3 gap-3 m-3">
-                        <button id="btn-addmoney" class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-solid fa-money-check-dollar text-green-300"></i>
-                                <p class="text-xs w-20">Add Money</p>
-                            </div>
-                        </button>
-                        <button id="btn-cashout" class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-solid fa-hand-holding-hand text-yellow-600"></i>
-                                <p class="text-xs w-20">Cash Out</p>
-                            </div>
-                        </button>
-                        <button id="btn-transfer" class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-solid fa-money-bill-transfer text-orange-400"></i>
-                                <p class="text-xs w-20">Transfer Money</p>
-                            </div>
-                        </button>
-                        <button class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-brands fa-get-pocket text-green-700"></i>
-                                <p class="text-xs w-20">Get Bonus</p>
-                            </div>
-                        </button>
-                        <button class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-brands fa-amazon-pay text-indigo-400"></i>
-                                <p class="text-xs w-20">Pay Bill</p>
-                            </div>
-                        </button>
-                        <button class="btn btn-lg">
-                            <div class="felx flex-col justify-center items-center">
-                                <i class="fa-solid fa-money-check text-blue-500"></i>
-                                <p class="text-xs w-20">e-Bank</p>
-                            </div>
-                        </button>
-                        
-                    </div>
-                      <!-- services end -->
-                       <div class="divider"></div>
-                       <!-- Add money section.............................................................. -->
-                       <div id="addmoney-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        <form class="card-body">
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">Bank A/C Number</span>
-                            </label>
-                            <input type="text" placeholder="Account Number" class="input input-bordered" required />
-                          </div>
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">Add Money</span>
-                            </label>
-                            <input id="addmoney-amount" type="text" placeholder="Add Money Amount" class="input input-bordered" required />
-                          </div>
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">PIN</span>
-                            </label>
-                            <input id="addmoney-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
-                            <label class="label">
-                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                          </div>
-                          <div class="form-control mt-6">
-                            <button id="btn-update-addmoney" class="btn btn-primary">Add Money</button>
-                          </div>
-                        </form>
-                      </div>
-                       <!-- cash out section.............................................................. -->
-                       <div id="cashout-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
-                        <form class="card-body">
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">Cash Out</span>
-                            </label>
-                            <input id="cashout-amount" type="text" placeholder="Cash Out Amount" class="input input-bordered" required />
-                          </div>
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">PIN</span>
-                            </label>
-                            <input id="cashout-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
-                            <label class="label">
-                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                          </div>
-                          <div class="form-control mt-6">
-                            <button id="btn-update-cashout" class="btn btn-primary">Cash Out</button>
-                          </div>
-                        </form>
-                      </div>
-                       <!-- transfer money section.............................................................. -->
-                       <div id="transfer-set" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden">
-                        <form class="card-body">
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">Transfer Money</span>
-                            </label>
-                            <input type="text" placeholder="Account Number" class="input input-bordered" required />
-                          </div>
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">Amount</span>
-                            </label>
-                            <input id="transfer-amount" type="text" placeholder="Enter Amount" class="input input-bordered" required />
-                          </div>
-                          <div class="form-control">
-                            <label class="label">
-                              <span class="label-text">PIN</span>
-                            </label>
-                            <input id="transfer-pin" type="password" placeholder="Enter Your PIN" class="input input-bordered" required />
-                            <label class="label">
-                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                          </div>
-                          <div class="form-control mt-6">
-                            <button id="btn-update-cashout" class="btn btn-primary">Transfer</button>
-                          </div>
-                        </form>
-                      </div>
+                    <p class="font-light text-sm">Available Balance</p>
                   </div>
                 </div>
-                
+                <div class="flex-none">
+                  <button class="btn btn-square btn-ghost">
+                    <!-- Add content here if needed -->
+                    <button class="btn text-xs">
+                      <i class="fa-solid fa-arrow-right-from-bracket"></i>Log
+                      Out
+                    </button>
+                  </button>
+                </div>
               </div>
-        </div>
+              <div class="divider mt-0"></div>
+              <!-- some information -->
+              <div class="m-3">
+                <h2 class="font-sans text-xl font-bold">
+                  <i class="fa-solid fa-fire mr-2 text-red-700"></i>Welcome to
+                  Green Bank!
+                </h2>
+                <p class="text-sm">
+                  Enjoy easy and convenient financial services with us. Cashout
+                  charge is low....
+                </p>
+              </div>
 
-        
+              <!-- services -->
+              <div class="grid grid-cols-3 gap-3 m-3">
+                <button id="btn-addmoney" class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i
+                      class="fa-solid fa-money-check-dollar text-green-300"
+                    ></i>
+                    <p class="text-xs w-20">Add Money</p>
+                  </div>
+                </button>
+                <button id="btn-cashout" class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i
+                      class="fa-solid fa-hand-holding-hand text-yellow-600"
+                    ></i>
+                    <p class="text-xs w-20">Cash Out</p>
+                  </div>
+                </button>
+                <button id="btn-transfer" class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i
+                      class="fa-solid fa-money-bill-transfer text-orange-400"
+                    ></i>
+                    <p class="text-xs w-20">Transfer Money</p>
+                  </div>
+                </button>
+                <button class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i class="fa-brands fa-get-pocket text-green-700"></i>
+                    <p class="text-xs w-20">Get Bonus</p>
+                  </div>
+                </button>
+                <button class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i class="fa-brands fa-amazon-pay text-indigo-400"></i>
+                    <p class="text-xs w-20">Pay Bill</p>
+                  </div>
+                </button>
+                <button class="btn btn-lg">
+                  <div class="felx flex-col justify-center items-center">
+                    <i class="fa-solid fa-money-check text-blue-500"></i>
+                    <p class="text-xs w-20">e-Bank</p>
+                  </div>
+                </button>
+              </div>
+              <!-- Transaction history -->
+              <div id="btn-transaction" class="text-center min-w-full">
+                <button class="btn text-xs">Transaction History</button>
+              </div>
+              <!-- services end -->
+              <div class="divider"></div>
+              <!-- Add money section.............................................................. -->
+              <div
+                id="addmoney-set"
+                class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden"
+              >
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Bank A/C Number</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Account Number"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Add Money</span>
+                    </label>
+                    <input
+                      id="addmoney-amount"
+                      type="text"
+                      placeholder="Add Money Amount"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input
+                      id="addmoney-pin"
+                      type="password"
+                      placeholder="Enter Your PIN"
+                      class="input input-bordered"
+                      required
+                    />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover"
+                        >Forgot password?</a
+                      >
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="btn-update-addmoney" class="btn btn-primary">
+                      Add Money
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- cash out section.............................................................. -->
+              <div
+                id="cashout-set"
+                class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden"
+              >
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Cash Out</span>
+                    </label>
+                    <input
+                      id="cashout-amount"
+                      type="text"
+                      placeholder="Cash Out Amount"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input
+                      id="cashout-pin"
+                      type="password"
+                      placeholder="Enter Your PIN"
+                      class="input input-bordered"
+                      required
+                    />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover"
+                        >Forgot password?</a
+                      >
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="btn-update-cashout" class="btn btn-primary">
+                      Cash Out
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- transfer money section.............................................................. -->
+              <div
+                id="transfer-set"
+                class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden"
+              >
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Transfer Money</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Account Number"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount</span>
+                    </label>
+                    <input
+                      id="transfer-amount"
+                      type="text"
+                      placeholder="Enter Amount"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input
+                      id="transfer-pin"
+                      type="password"
+                      placeholder="Enter Your PIN"
+                      class="input input-bordered"
+                      required
+                    />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover"
+                        >Forgot password?</a
+                      >
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="btn-update-cashout" class="btn btn-primary">
+                      Transfer
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Transaction history -->
+               <div id="transaction-history" class="hidden">
+                 <div class="">
+                    <h2 class="text-xl ml-[65px] font-bold text-gray-700 text-centerd my-8">Transaction History</h2>
+                  </div>
+
+                  <div id="history-container" class="mx-10 my-5">
+
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+    <script></script>
     <!-- script -->
-    <script src="services.js"></script>
+
     <script src="servicesUtility.js"></script>
-    
-    
-</body>
+    <script src="addmoney.js"></script>
+    <script src="cashout.js"></script>
+    <script src="showelement.js"></script>
+    <script src="transaction.js"></script>
+  </body>
 </html>
